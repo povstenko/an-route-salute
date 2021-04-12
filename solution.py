@@ -1,11 +1,14 @@
 def solution(s):
     cntr = 0
-    prev = s[0]
-    for char in s:
-        if prev != char:
-            cntr += 1
-            print(char)
-        prev = char
+    for i, char in enumerate(s):
+        # print(i, char)
+        if char == ">":
+            for el in s[i:]:
+                if el == "<":
+                    cntr += 2
+    
     return cntr
 
+print(solution(">----<"))
+print(solution("<<>><"))
 print(solution("<<->>-<"))
